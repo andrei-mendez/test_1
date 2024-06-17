@@ -1,0 +1,36 @@
+                      
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Priority Example</title>
+    <style>
+        .class-style {
+            color: green;
+        }
+        #id-style {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="id-style" class="class-style">This is a test.</div>
+    <script>
+        // Get the element
+        var element = document.getElementById('id-style');
+
+        // Get the computed style of the element
+        var computedStyle = window.getComputedStyle(element);
+
+        // Display the color property
+        console.log(computedStyle.color);  // Outputs "red" because ID selector has higher priority
+
+        // Override the style
+        element.style.color = 'blue';
+
+        // Verify the override
+        console.log(window.getComputedStyle(element).color);  // Outputs "blue"
+    </script>
+</body>
+</html>
+             
